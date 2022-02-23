@@ -13,10 +13,15 @@ public class FlightFactory {
         setType(type);
     }
 
-    public static CommercialFlight createFlight(String type, Airline airline, Airport origin, Airport destination, String flightNum) throws Exception {
+    public static CommercialFlight createFlight(String type, Airline airline, Airport origin, Airport destination, String flightNum,Integer passengerCapacity) throws Exception {
         //System.out.println(type+ "------XXX-----");
-        if (type.equals("CommercialFlight"))
-            return new CommercialFlight(airline,origin,destination,flightNum);
+        if (type.equals("CommercialFlight")) {
+            return new CommercialFlight(airline, origin, destination, flightNum);
+        }
+        else if (type.equals("PassengerFlight")) {
+            return new PassengerFlight(airline, origin, destination, flightNum,passengerCapacity);
+
+        }
         else return null;
     }
 

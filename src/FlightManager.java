@@ -12,17 +12,15 @@ public class FlightManager {
         for (i = 0; i < flights.size(); i++)
         {
             if(flights.get(i).toString().contains(flightNum)==true) {
-                System.out.println(flights.get(i));
                 return flights.get(i);
             }
         }
             throw new Exception("Flight does not exist.");
-
     }
 
-    public static CommercialFlight createFlight(String type, Airline airline, Airport origin, Airport destination,String flightNum) throws Exception{
-        CommercialFlight x =FlightFactory.createFlight(type, airline, origin, destination, flightNum);
+    public static CommercialFlight createFlight(String type, Airline airline, Airport origin, Airport destination,String flightNum, Integer passengerCapacity) throws Exception{
+        CommercialFlight x =FlightFactory.createFlight(type, airline, origin, destination, flightNum, passengerCapacity);
         flights.add(x);
-            return x;
+        return x;
     }
 }
