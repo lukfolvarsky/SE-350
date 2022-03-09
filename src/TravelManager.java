@@ -32,14 +32,14 @@ public class TravelManager {
         //System.out.print(myFlight);
 
         /*Creates two flights and stores them in list.*/
-        FlightManager.createFlight(CommercialFlight,getAirline,originAirport,destinationAirport,flightNum,cap);
+        ProxyFlightManager.createFlight(CommercialFlight,getAirline,originAirport,destinationAirport,flightNum,cap);
         //FlightManager.createFlight(type,getAirline,originAirport,destinationAirport,flightNum2,cap);
 
-        FlightManager.createFlight(PassengerFlight,getAirline,originAirport,destinationAirport,flightNum2,cap);
+        ProxyFlightManager.createFlight(PassengerFlight,getAirline,originAirport,destinationAirport,flightNum2,cap);
 
         /*Checks to see if flight exists. If it exists then return the flight info.*/
-        System.out.println(FlightManager.getFlightByNumber(flightNum));
-        System.out.println(FlightManager.getFlightByNumber(flightNum2));
+        System.out.println(ProxyFlightManager.getFlightByNumber(flightNum));
+        System.out.println(ProxyFlightManager.getFlightByNumber(flightNum2));
 
         /*This one does not exist*/
        // FlightManager.getFlightByNumber(flightNotExist);
